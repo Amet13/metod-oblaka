@@ -1,0 +1,35 @@
+%!TEX TS-program = pdflatex
+
+% Author: Amet Umerov (admin@amet13.name)
+
+\documentclass[a4paper,12pt]{article}
+\input{inc/preamble} % Подключаем преамбулу
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\thispagestyle{empty}
+\input{inc/title} % Титул 
+
+\thispagestyle{empty}
+\tableofcontents % Содержание
+\clearpage
+% {~}\bigskip % Большой отступ снизу
+
+
+\input{inc/1-virtualbox}
+\input{inc/2-owncloud}
+
+\printbibliography % Список литературы
+\addcontentsline{toc}{section}{\protect\numberline{}Список литературы}
+\thispagestyle{empty}
+\clearpage
+
+\appendix % Приложения
+\input{inc/a-appendix}
+\input{inc/b-appendix}
+\input{inc/c-appendix}
+\input{inc/d-appendix}
+
+\end{document}
