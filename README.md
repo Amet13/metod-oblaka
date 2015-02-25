@@ -13,6 +13,7 @@ metod-oblaka-grid
 * B Пример установки Debian 7 GNU/Linux в VirtualBox
 * C Пример установки ownCloud Debian 7 GNU/Linux
 * D Настройка подключения ownCloud Client к серверу
+
 Структура исходников
 --------------------
 Структура каталогов:
