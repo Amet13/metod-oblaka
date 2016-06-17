@@ -10,6 +10,12 @@
 \usepackage[english, russian]{babel}	% Языки: русский, английский
 \usepackage{pscyr}						% Красивые русские шрифты
 
+\usepackage[scale=0.8]{geometry} % Простой способ задавать поля
+	\geometry{top=30mm} %15mm
+	\geometry{bottom=20mm}
+	\geometry{left=30mm}
+	\geometry{right=20mm}
+
 %%% Математические пакеты %%%
 \usepackage{amsthm,amsfonts,amsmath,amssymb,amscd} % Математические дополнения от AMS
 
@@ -63,7 +69,7 @@
 \usepackage{fancyhdr}
  	\pagestyle{fancy}
  	\fancyhead[L]{\thepage} % Нумерация страниц в левом верхнем углу
-	
+
 \let\Sectionmark\sectionmark
 \def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
 \makeatletter
@@ -86,17 +92,17 @@
 
 \lstset{
   columns=fixed,					% Делаем моноширинный шрифт
-  backgroundcolor=\color{backcolor},% Цвет фона, нужно подключить пакет color или xcolor  
-  basicstyle=\small\ttfamily,		% Размер и начертание  
-  breakatwhitespace=false,			% Переносим строки только при наличии пробела  
-  breaklines=true,					% Автоматически переносим строки    
-  commentstyle=\color{black},	    % Стиль для комментариев   
-  extendedchars=true,				% Позволяем использовать не-ASCII символы  
-  keywordstyle=\color{black},		% Стиль для ключевых слов 
-  language=bash,					% Язык программирования  
-  morekeywords={*,...},				% Пользовательские ключевые слова  
-  showspaces=false,					% Показывать ли пробелы с помощью специальных отступов  
-  showstringspaces=false,			% Показывать ли пробелы в строках  
+  backgroundcolor=\color{backcolor},% Цвет фона, нужно подключить пакет color или xcolor
+  basicstyle=\small\ttfamily,		% Размер и начертание
+  breakatwhitespace=false,			% Переносим строки только при наличии пробела
+  breaklines=true,					% Автоматически переносим строки
+  commentstyle=\color{black},	    % Стиль для комментариев
+  extendedchars=true,				% Позволяем использовать не-ASCII символы
+  keywordstyle=\color{black},		% Стиль для ключевых слов
+  language=bash,					% Язык программирования
+  morekeywords={*,...},				% Пользовательские ключевые слова
+  showspaces=false,					% Показывать ли пробелы с помощью специальных отступов
+  showstringspaces=false,			% Показывать ли пробелы в строках
   showtabs=false,					% Показывать ли знаки табуляции
   stepnumber=1,						% Размер шага между номерами строк
   tabsize=2						    % Размер табуляции

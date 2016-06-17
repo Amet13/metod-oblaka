@@ -1,26 +1,25 @@
-\section{Пример установки ownCloud Server в Debian 7 GNU/Linux} \label{pril:c}
+\section{Пример установки ownCloud Server в Debian GNU/Linux} \label{pril:c}
 
 После успешного входа в систему, в первую очередь необходимо получить права суперпользователя\footnote{Пароль пользователя не отображается на экране во время набора}:
 \begin{lstlisting}
-student@debian:~$ su -
+student@student-name:~$ su -
 Password: toor
 \end{lstlisting}
 
 Добавление репозитория и ключа для ownCloud Server:
 \begin{lstlisting}
-root@debian:~# echo "deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/ /" >> /etc/apt/sources.list.d/owncloud.list
-root@debian:~# wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key
-...
-2015-02-10 16:38:24 (51.0 MB/s) - 'Release.key' saved [1003/1003]
-
-root@debian:~# apt-key add - < Release.key
+root@student-name:~# wget -nv https://goo.gl/mmV2ga -O Release.key
+root@student-name:~# apt-key add - < Release.key
 OK
+root@student-name:~# echo deb http://download.owncloud.org \
+> /download/repositories/stable/Debian_8.0/ / > \
+> /etc/apt/sources.list.d/owncloud.list
 \end{lstlisting}
 
 После добавления репозитория необходимо обновить список доступного в репозиториях ПО и запустить установку ownCloud Server (во время установки MySQL, установщик запросит пароль суперпользователя MySQL, он не обязательно должен совпадать с паролем пользователя root):
 \begin{lstlisting}
-root@debian:~# apt-get update
-root@debian:~# apt-get install owncloud
+root@student-name:~# apt-get update
+root@student-name:~# apt-get install owncloud owncloud-files
 ...
 New password for the MySQL "root" user: toor-mysql
 Repeat password for the MySQL "root" user: toor-mysql
@@ -37,12 +36,12 @@ Repeat password for the MySQL "root" user: toor-mysql
 
 Приложение предлагает использовать базу данных SQLite по умолчанию, мы же будем использовать MySQL:
 \begin{lstlisting}
-root@debian:~# mysql -u root -h localhost -p
-Enter password: toor-mysql
-
+root@student-name:~# mysql -uroot -ptoor-mysql
 mysql> CREATE DATABASE owncloud_DB;
-mysql> CREATE USER "owncloud-web"@"localhost" IDENTIFIED BY "owncloud-passwd";
-mysql> GRANT ALL PRIVILEGES ON owncloud_DB.* TO "owncloud-web"@"localhost";
+mysql> CREATE USER "owncloud-web"@"localhost" \
+    -> IDENTIFIED BY "owncloud-passwd";
+mysql> GRANT ALL PRIVILEGES ON owncloud_DB.* \
+    -> TO "owncloud-web"@"localhost";
 mysql> FLUSH PRIVILEGES;
 mysql> quit
 \end{lstlisting}
