@@ -2,24 +2,26 @@
 
 После успешного входа в систему, в первую очередь необходимо получить права суперпользователя\footnote{Пароль пользователя не отображается на экране во время набора}:
 \begin{lstlisting}
-student@student-name:~$ su -
+$ su -
 Password: toor
+# apt-get install sudo
+# usermod -a -G sudo student
 \end{lstlisting}
 
 Добавление репозитория и ключа для ownCloud Server:
 \begin{lstlisting}
-root@student-name:~# wget -nv https://goo.gl/mmV2ga -O Release.key
-root@student-name:~# apt-key add - < Release.key
+# wget -nv https://goo.gl/mmV2ga -O Release.key
+# apt-key add - < Release.key
 OK
-root@student-name:~# echo deb http://download.owncloud.org \
+# echo deb http://download.owncloud.org\
 > /download/repositories/stable/Debian_8.0/ / > \
 > /etc/apt/sources.list.d/owncloud.list
 \end{lstlisting}
 
 После добавления репозитория необходимо обновить список доступного в репозиториях ПО и запустить установку ownCloud Server (во время установки MySQL, установщик запросит пароль суперпользователя MySQL, он не обязательно должен совпадать с паролем пользователя root):
 \begin{lstlisting}
-root@student-name:~# apt-get update
-root@student-name:~# apt-get install owncloud owncloud-files
+# apt-get update
+# apt-get install owncloud owncloud-files
 ...
 New password for the MySQL "root" user: toor-mysql
 Repeat password for the MySQL "root" user: toor-mysql
@@ -36,7 +38,7 @@ Repeat password for the MySQL "root" user: toor-mysql
 
 Приложение предлагает использовать базу данных SQLite по умолчанию, мы же будем использовать MySQL:
 \begin{lstlisting}
-root@student-name:~# mysql -uroot -ptoor-mysql
+# mysql -uroot -ptoor-mysql
 mysql> CREATE DATABASE owncloud_DB;
 mysql> CREATE USER "owncloud-web"@"localhost" \
     -> IDENTIFIED BY "owncloud-passwd";

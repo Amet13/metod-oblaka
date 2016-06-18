@@ -1,0 +1,69 @@
+\section{Деплой приложения на Heroku} \label{pril:e}
+
+Для регистрации в Heroku\footnote{\url{https://signup.heroku.com/login}} необходима только электронная почта.
+\begin{figure}[ht]
+    \centering
+	\includegraphics[width=\linewidth]{register}
+    \caption{Регистрация в Heroku}
+\end{figure}
+
+Создаем новое приложение:
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{createapp}
+	\includegraphics[width=\linewidth]{helloivt}
+    \caption{Создание приложения в Heroku}
+\end{figure}
+
+Авторизуемся на сервере с Debian, устанавливаем heroku-cli и авторизуемся в Heroku:
+\begin{lstlisting}
+$ ssh student@192.168.0.62
+$ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+$ heroku login
+heroku-cli: Installing CLI... 21.83MB/21.83MB
+Enter your Heroku credentials.
+Email: student123@sevsu.ru
+Password (typing will be hidden):
+Logged in as student123@sevsu.ru
+\end{lstlisting}
+
+Клонируем репозиторий с тестовым приложением на Flask:
+\begin{lstlisting}
+$ git config --global --add user.email "student123@sevsu.ru"
+$ git config --global --add user.name 'Name Surname'
+$ git clone https://github.com/craigkerstiens/flask-helloworld
+$ cd flask-helloworld/
+\end{lstlisting}
+
+Реиницилизируем репозиторий и деплоим приложение в Heroku:
+\begin{lstlisting}
+$ git init
+Reinitialized existing Git repository in /home/student/flask-helloworld/.git/
+$ heroku git:remote -a helloivt
+set git remote heroku to https://git.heroku.com/helloivt.git
+$ git push heroku master
+\end{lstlisting}
+
+Проверка:
+\begin{figure}[ht]
+    \centering
+	\includegraphics[width=\linewidth]{hello}
+\end{figure}
+
+Внесем изменения в приложение, отредактировав приветствие:
+\begin{lstlisting}
+$ nano app.py
+    return "Hello from IVT student!"
+$ git commit -am "First commit!"
+[master 898f7d8] First commit!
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git push heroku master
+\end{lstlisting}
+
+Проверяем:
+\begin{figure}[ht]
+    \centering
+	\includegraphics[width=\linewidth]{newhello}
+\end{figure}
+
+\clearpage
