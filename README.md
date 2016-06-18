@@ -6,11 +6,13 @@ metod-oblaka-grid
 ------------------
 1. Лабораторная работа №1. Знакомство с виртуализацией. Система виртуализации Oracle VM VirtualBox
 2. Лабораторная работа №2. Модель обслуживания SaaS (Software-as-a-Service) на примере развертывания облачного хранилища ownCloud
+3. Лабораторная работа №3. Модель обслуживания PaaS (Platform-as-a-Service) на примере деплоя приложения в Heroku
 * Список литературы
 * A Пример создания виртуальной машины в Oracle VM VirtualBox
-* B Пример установки Debian 7 GNU/Linux в VirtualBox
-* C Пример установки ownCloud Debian 7 GNU/Linux
+* B Пример установки Debian GNU/Linux в VirtualBox
+* C Пример установки ownCloud в Debian GNU/Linux
 * D Настройка подключения ownCloud Client к серверу
+* E Пример деплоя приложения на Heroku
 
 Структура исходников
 --------------------
@@ -47,7 +49,7 @@ metod-oblaka-grid
 Для пользователей GNU/Linux можно воспользоваться Makefile.
 Пример компиляции проекта:
 ```bash
-cd openvz-tutorial/
+cd metod-oblaka-grid/
 make
 ```
 Пример очистки ненужных файлов после компиляции:
