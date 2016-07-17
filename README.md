@@ -13,7 +13,7 @@ metod-oblaka
 * A Пример создания виртуальной машины в Oracle VM VirtualBox
 * B Пример установки Debian GNU/Linux в VirtualBox
 * C Пример установки ownCloud в Debian GNU/Linux
-* D Настройка подключения ownCloud Client к серверу
+* D Подключение ownCloud Client к серверу
 * E Пример деплоя приложения на Heroku
 * F Пример создания инстанса в OpenStack
 
