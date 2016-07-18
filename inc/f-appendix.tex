@@ -19,12 +19,19 @@ OpenStack позволяет создавать множество инстан�
 
 Для настройки OpenStack, в первую очередь, необходимо настроить сеть.
 
-Создадим внутреннюю сеть с именем student-net, подсеть student-subnet (192.168.0.0/24), укажем пул используемых IP-адресов (192.168.0.2 -- 192.168.0.10) и укажем DNS-сервера (8.8.8.8, 8.8.4.4) в разделе \textbf{Network - Networks - Create Network} (рис.~\ref{pic:net}).
+Создадим в разделе \textbf{Network - Networks - Create Network} (рис.~\ref{pic:net}):
+\begin{itemize}
+    \item внутреннюю сеть с именем student-net;
+    \item подсеть student-subnet (192.168.0.0/24);
+    \item укажем пул используемых IP-адресов (192.168.0.2 -- 192.168.0.10);
+    \item и укажем DNS-сервера (8.8.8.8, 8.8.4.4).
+\end{itemize}
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\linewidth]{6_net}
-    \includegraphics[width=\linewidth]{7_net}
-    \includegraphics[width=\linewidth]{8_net}
+    \includegraphics[width=0.9\linewidth]{6_net}
+    \includegraphics[width=0.9\linewidth]{7_net}
+    \includegraphics[width=0.9\linewidth]{8_net}
     \caption{Настройка внутренней сети}\label{pic:net}
 \end{figure}
 
@@ -38,6 +45,7 @@ OpenStack позволяет создавать множество инстан�
 \end{figure}
 
 Текущую топологию сети можно увидеть в разделе \textbf{Network - Network Topology} (рис.~\ref{pic:topology}).
+
 На схеме видно, что маршрутизатор (student-router) связан с внешней сетью (public), но не с внутренней (student-net).
 \begin{figure}[ht]
     \centering
@@ -112,7 +120,7 @@ OpenStack позволяет создавать множество инстан�
 В разделе \textbf{Networking} выберем сеть student-net.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.9\linewidth]{17_instance}
+    \includegraphics[width=0.8\linewidth]{17_instance}
     \caption{Создание нового инстанса}\label{pic:instance}
 \end{figure}
 
