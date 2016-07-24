@@ -10,9 +10,9 @@ metod-oblaka
 2. Лабораторная работа №2. Модель обслуживания SaaS на примере развертывания облачного хранилища ownCloud
 3. Лабораторная работа №3. Модель обслуживания PaaS на примере деплоя приложения в Heroku
 4. Лабораторная работа №4. Модель обслуживания IaaS на примере создания инстанса в OpenStack
-* A Создание виртуальной машины в Oracle VM VirtualBox
+* A Создание виртуальной машины в VirtualBox
 * B Установка Debian GNU/Linux в VirtualBox
-* C Установка ownCloud в Debian GNU/Linux
+* C Установка ownCloud Server в Debian GNU/Linux
 * D Подключение ownCloud Client к серверу
 * E Деплой приложения на Heroku
 * F Создание инстанса в OpenStack
