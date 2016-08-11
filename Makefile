@@ -4,8 +4,8 @@ build:
 	latexmk -pdf -synctex=1 main.tex
 
 run:
-	# Я использую atril для просмотра PDF
-	atril main.pdf &
+	# Я использую xreader для просмотра PDF
+	xreader main.pdf &
 
 clean:
 	# Чистим временные файлы
