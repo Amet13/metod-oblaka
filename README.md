@@ -39,6 +39,7 @@ metod-oblaka
 
 Пример компиляции проекта с помощью Makefile:
 ```bash
+git clone https://github.com/Amet13/metod-oblaka.git
 cd metod-oblaka/
 make
 ```
