@@ -4,7 +4,7 @@
 \begin{lstlisting}
 $ su -
 Password: toor
-# apt-get install sudo
+# apt install sudo
 # usermod -a -G sudo student
 \end{lstlisting}
 
@@ -20,8 +20,8 @@ OK
 
 После добавления репозитория необходимо обновить список доступного в репозиториях ПО и запустить установку ownCloud Server (во время установки MySQL, установщик запросит пароль суперпользователя MySQL, он не обязательно должен совпадать с паролем пользователя root):
 \begin{lstlisting}
-# apt-get update
-# apt-get install owncloud owncloud-files
+# apt update
+# apt install owncloud owncloud-files
 ...
 New password for the MySQL "root" user: toor-mysql
 Repeat password for the MySQL "root" user: toor-mysql
@@ -30,13 +30,13 @@ Repeat password for the MySQL "root" user: toor-mysql
 После того, как установщик скачал и установил все необходимые пакеты, можно проверить корректность установки, зайдя по адресу \texttt{http://192.168.0.102/owncloud/}, \\
 где \texttt{192.168.0.102} "--- IP-адрес сервера (виртуальной машины).
 
-Приложение предлагает использовать базу данных SQLite по умолчанию, мы же будем использовать MySQL:
+Приложение предлагает использовать базу данных SQLite\footnote{При использовании SQLite вместо MySQL, следующий шаг можно пропустить} по умолчанию, мы будем использовать MySQL:
 \begin{lstlisting}
 # mysql -uroot -ptoor-mysql
-mysql> CREATE DATABASE owncloud_DB;
+mysql> CREATE DATABASE owncloud-DB;
 mysql> CREATE USER "owncloud-web"@"localhost" \
     -> IDENTIFIED BY "owncloud-passwd";
-mysql> GRANT ALL PRIVILEGES ON owncloud_DB.* \
+mysql> GRANT ALL PRIVILEGES ON owncloud-DB.* \
     -> TO "owncloud-web"@"localhost";
 mysql> FLUSH PRIVILEGES;
 mysql> quit
