@@ -33,10 +33,10 @@ Repeat password for the MySQL "root" user: toor-mysql
 Приложение предлагает использовать базу данных SQLite\footnote{При использовании SQLite вместо MySQL, следующий шаг можно пропустить} по умолчанию, мы для примера будем использовать MySQL:
 \begin{lstlisting}
 # mysql -uroot -ptoor-mysql
-mysql> CREATE DATABASE owncloud-DB;
+mysql> CREATE DATABASE owncloudDB;
 mysql> CREATE USER "owncloud-web"@"localhost" \
     -> IDENTIFIED BY "owncloud-passwd";
-mysql> GRANT ALL PRIVILEGES ON owncloud-DB.* \
+mysql> GRANT ALL PRIVILEGES ON owncloudDB.* \
     -> TO "owncloud-web"@"localhost";
 mysql> FLUSH PRIVILEGES;
 mysql> quit
