@@ -1,11 +1,11 @@
 all: build run
 
 build:
-	latexmk -pdf -synctex=1 main.tex
+	latexmk -pdf -synctex=1 -jobname=metod-oblaka main.tex
 
 run:
 	# Я использую xreader для просмотра PDF
-	xreader main.pdf &
+	xreader metod-oblaka.pdf &
 
 clean:
 	# Чистим временные файлы
