@@ -74,3 +74,52 @@
 \end{figure}
 
 \clearpage
+
+Если после установки, операционная система не получает автоматические настройки сети через DHCP, то необходимо сконфигурировать сеть вручную.
+
+В первую очередь необходимо убедиться, что у сетевого адаптера в настройках виртуальной машины выставлен режим "Сетевой мост".
+Затем с помощью команды \texttt{ipconfig} в Windows или \texttt{ifconfig} в Linux/MacOS необходимо узнать параметры своей сети на хост-компьютере.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{ipconfig}
+    \caption{Настройки сети на хост-компьютере}\label{pic:ipconfig}
+\end{figure}
+
+Тут видно, что хост-компьютер находится в сети \texttt{192.168.0.0}, имеет IP-адрес \texttt{192.168.0.10}, шлюзом является маршрутизатор с IP-адресом \texttt{192.168.0.1}.
+
+Настроим простейшую одноранговую сеть для виртуальной машины, пусть IP-адрес виртуальной машины будет \texttt{192.168.0.102}.
+Для этого необходимо отредактировать конфигурационный файл сети и привести его к такому виду:
+\begin{lstlisting}
+# nano /etc/network/interfaces
+source /etc/network/interfaces.d/*
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 192.168.0.102
+netmask 255.255.255.0
+network 192.168.0.0
+broadcast 192.255.255.255
+gateway 192.168.0.1
+dns-nameservers 192.168.0.1 8.8.8.8
+\end{lstlisting}
+
+В данном конфугурационном файле указаны настройки для основного интерфейса сети (eth0).
+После сохранения изменений в конфигурационном файле, необходимо перезапустить демон сети:
+\begin{lstlisting}
+# /etc/init.d/networking restart
+\end{lstlisting}
+
+Проверим на виртуальной машине новые настройки сети:
+\begin{lstlisting}
+# ifconfig eth0
+eth0   Link encap:Ethernet  HWaddr 08:00:27:f4:0d:39
+       inet addr:192.168.0.102  Bcast:192.168.0.255  Mask:255.255.255.0
+       UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+...
+\end{lstlisting}
+
+Пробуем пропинговать адрес \texttt{192.168.0.102} или соединиться к виртуальной машине по ssh.
+
+\clearpage
