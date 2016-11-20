@@ -1,20 +1,20 @@
 %%% Преамбула %%%
 
 %%% Поля и разметка страницы %%%
-\usepackage{lscape}		% Для включения альбомных страниц
+\usepackage{lscape} % Для включения альбомных страниц
 
 %%% Кодировки и шрифты %%%
-\usepackage{cmap}						% Улучшенный поиск русских слов в полученном pdf-файле
-\usepackage[T2A]{fontenc}				% Поддержка русских букв
-\usepackage[utf8]{inputenc}				% Кодировка utf8
-\usepackage[english, russian]{babel}	% Языки: русский, английский
-\usepackage{pscyr}						% Красивые русские шрифты
+\usepackage{cmap} % Улучшенный поиск русских слов в полученном pdf-файле
+\usepackage[T2A]{fontenc} % Поддержка русских букв
+\usepackage[utf8]{inputenc} % Кодировка utf8
+\usepackage[english, russian]{babel} % Языки: русский, английский
+\usepackage{pscyr} % Красивые русские шрифты
 
 \usepackage{geometry} % Простой способ задавать поля
-	\geometry{top=25mm}
-	\geometry{bottom=15mm}
-	\geometry{left=25mm}
-	\geometry{right=15mm}
+\geometry{top=25mm}
+\geometry{bottom=15mm}
+\geometry{left=25mm}
+\geometry{right=15mm}
 
 %%% Математические пакеты %%%
 \usepackage{amsthm,amsfonts,amsmath,amssymb,amscd} % Математические дополнения от AMS
@@ -28,12 +28,12 @@
 \usepackage{colortbl}
 
 %%% Таблицы %%%
-\usepackage{longtable}					% Длинные таблицы
-\usepackage{multirow,makecell,array}	% Улучшенное форматирование таблиц
+\usepackage{longtable} % Длинные таблицы
+\usepackage{multirow,makecell,array} % Улучшенное форматирование таблиц
 
 %%% Общее форматирование
-\usepackage[singlelinecheck=off,center]{caption}	% Многострочные подписи
-\usepackage{soul}									% Поддержка переносоустойчивых подчеркиваний и зачеркиваний
+\usepackage[singlelinecheck=off,center]{caption} % Многострочные подписи
+\usepackage{soul} % Поддержка переносоустойчивых подчеркиваний и зачеркиваний
 
 %%% Библиография %%%
 %\usepackage{cite} % Красивые ссылки на литературу
@@ -52,13 +52,13 @@
 }
 
 %%% Изображения %%%
-\usepackage[dvipdfm]{graphicx}	% Подключаем пакет работы с графикой
+\usepackage[dvipdfm]{graphicx} % Подключаем пакет работы с графикой
 \graphicspath{{images/}{images/install_vb/}{images/install_debian/}{images/owncloud-server/}{images/owncloud-client/}{images/heroku/}{images/openstack/}}	% Пути к изображениям
 
 %%% Выравнивание и переносы %%%
-\sloppy					% Избавляемся от переполнений
-\clubpenalty=10000		% Запрещаем разрыв страницы после первой строки абзаца
-\widowpenalty=10000		% Запрещаем разрыв страницы после последней строки абзаца
+\sloppy % Избавляемся от переполнений
+\clubpenalty=10000 % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000 % Запрещаем разрыв страницы после последней строки абзаца
 
 %%% Колонтитулы %%%
 \usepackage{fancyhdr}
@@ -81,21 +81,21 @@
 \definecolor{backcolor}{rgb}{0.95,0.95,0.95}
 
 \lstset{
-  columns=fixed,					% Делаем моноширинный шрифт
-  backgroundcolor=\color{backcolor},% Цвет фона, нужно подключить пакет color или xcolor
-  basicstyle=\small\ttfamily,		% Размер и начертание
-  breakatwhitespace=false,			% Переносим строки только при наличии пробела
-  breaklines=true,					% Автоматически переносим строки
-  commentstyle=\color{black},	    % Стиль для комментариев
-  extendedchars=true,				% Позволяем использовать не-ASCII символы
-  keywordstyle=\color{black},		% Стиль для ключевых слов
-  language=bash,					% Язык программирования
-  morekeywords={*,...},				% Пользовательские ключевые слова
-  showspaces=false,					% Показывать ли пробелы с помощью специальных отступов
-  showstringspaces=false,			% Показывать ли пробелы в строках
-  showtabs=false,					% Показывать ли знаки табуляции
-  stepnumber=1,						% Размер шага между номерами строк
-  tabsize=2						    % Размер табуляции
+  columns=fixed, % Делаем моноширинный шрифт
+  backgroundcolor=\color{backcolor}, % Цвет фона, нужно подключить пакет color или xcolor
+  basicstyle=\small\ttfamily, % Размер и начертание
+  breakatwhitespace=false, % Переносим строки только при наличии пробела
+  breaklines=true, % Автоматически переносим строки
+  commentstyle=\color{black}, % Стиль для комментариев
+  extendedchars=true, % Позволяем использовать не-ASCII символы
+  keywordstyle=\color{black}, % Стиль для ключевых слов
+  language=bash, % Язык программирования
+  morekeywords={*,...}, % Пользовательские ключевые слова
+  showspaces=false, % Показывать ли пробелы с помощью специальных отступов
+  showstringspaces=false, % Показывать ли пробелы в строках
+  showtabs=false, % Показывать ли знаки табуляции
+  stepnumber=1, % Размер шага между номерами строк
+  tabsize=2 % Размер табуляции
 }
 
 %%% Счетчик номера сноски на каждой странице сбрасывается %%%
