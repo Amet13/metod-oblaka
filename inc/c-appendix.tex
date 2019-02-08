@@ -4,24 +4,24 @@
 \begin{lstlisting}
 $ su -
 Password: toor
-# apt install sudo
+# apt install sudo gnupg2 apt-transport-https
 # usermod -a -G sudo student
 \end{lstlisting}
 
 Добавление репозитория и ключа для ownCloud Server:
 \begin{lstlisting}
-# wget -nv https://goo.gl/mmV2ga -O Release.key
+# wget -nv https://bit.ly/2I1dbjp -O Release.key
 # apt-key add - < Release.key
 OK
 # echo deb http://download.owncloud.org\
-> /download/repositories/stable/Debian_8.0/ / > \
+> /download/repositories/production/Debian_9.0/ / > \
 > /etc/apt/sources.list.d/owncloud.list
 \end{lstlisting}
 
 После добавления репозитория необходимо обновить список доступного в репозиториях ПО и запустить установку ownCloud Server (во время установки MySQL, установщик запросит пароль суперпользователя MySQL, он не обязательно должен совпадать с паролем пользователя root):
 \begin{lstlisting}
 # apt update
-# apt install owncloud owncloud-files
+# apt install owncloud-files
 ...
 New password for the MySQL "root" user: toor-mysql
 Repeat password for the MySQL "root" user: toor-mysql
