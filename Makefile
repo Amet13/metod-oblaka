@@ -16,3 +16,7 @@ clean:
 	*.out \
 	*.synctex.gz \
 	*.toc
+
+docker:
+	docker build -t docker-latex .
+	docker run --rm -ti -v ${PWD}:/metod-oblaka:Z docker-latex bash -c "make build && make clean"
