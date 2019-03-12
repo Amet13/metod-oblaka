@@ -15,7 +15,7 @@ metod-oblaka
 * C Установка ownCloud Server в Debian GNU/Linux
 * D Подключение ownCloud Client к серверу
 * E Деплой приложения на Heroku
-* F Создание инстанса в OpenStack
+* F Создание инстанса в OpenStack (только для ознакомления)
 
 Структура исходников
 --------------------
@@ -42,6 +42,11 @@ metod-oblaka
 git clone https://github.com/Amet13/metod-oblaka
 cd metod-oblaka/
 make
+```
+
+Или с помощью Docker:
+```bash
+make docker
 ```
 
 Пример очистки сборочных файлов (кроме PDF):
